@@ -39,49 +39,46 @@ Il progetto ha lo scopo di:
 
 ---
 
-## 🧪 Contenuti trattati negli esempi
+## 🧠 Esercizi di NLP (Natural Language Processing)
 
-Gli esercizi contenuti in questo progetto coprono in modo progressivo i principali argomenti di **Machine Learning (ML)** e **Deep Learning (DL)**, con applicazioni pratiche legate al tema della rigenerazione.
+Questa sezione contiene esercizi introduttivi sul trattamento automatico del linguaggio naturale con **spaCy**, applicati alla lingua italiana.
 
-### 📊 1. Preprocessing dei dati
-- Gestione di dataset reali e simulati (`.csv`, immagini, testo)
-- Pulizia, normalizzazione e codifica delle variabili
-- Visualizzazione esplorativa con `matplotlib` e `seaborn`
+Ogni esercizio è focalizzato su un singolo concetto fondamentale del NLP, utile per costruire pipeline linguistiche, motori di ricerca semantici, e classificatori testuali.
 
-### 🔍 2. Machine Learning supervisionato
-- Regressione lineare e polinomiale
-- Classificatori: k-NN, Decision Tree, Random Forest
-- Validazione incrociata e metriche (accuracy, MAE, MSE)
+### 📘 Esercizi contenuti:
 
-### 🧠 3. Deep Learning (reti neurali)
-- Implementazione di reti neurali fully-connected (MLP)
-- Addestramento con backpropagation, ottimizzazione con Adam/SGD
-- Uso di `PyTorch` e/o `TensorFlow` per costruire modelli custom
+#### 📌 1. TOKENIZATION — Suddividere il testo in unità minime
+Suddivide un testo in parole, segni di punteggiatura e simboli, detti *token*.
 
-### 🧠 4. Reti convoluzionali (CNN)
-- Classificazione di immagini
-- Architetture base (Conv2D + MaxPooling + Dense)
-- Augmentation dei dati, overfitting, early stopping
+#### 📌 2. POS TAGGING — Etichettatura grammaticale
+Assegna a ogni parola la sua **categoria grammaticale** (nome, verbo, aggettivo, ecc.).
 
-### ⏳ 5. Serie temporali e dati sequenziali
-- Preparazione di dataset sequenziali
-- Introduzione a RNN/LSTM per la previsione di dati nel tempo
-- Forecasting di trend ambientali o urbani (es. inquinamento, traffico)
+#### 📌 3. NER — Named Entity Recognition
+Riconosce le **entità nominate** nel testo, come persone, città, date, organizzazioni.
 
-### 🧠 6. NLP e analisi del testo
-- Tokenizzazione, lemmatizzazione, stop-word filtering con spaCy
-- Costruzione di vocabolari e conteggio delle frequenze
-- Embedding e classificazione di frasi o documenti (BoW, RNN)
+#### 📌 4. LEMMATIZATION — Forma base della parola
+Riconduce ogni parola alla sua **forma base (lemma)**: ad es. "correvano" → "correre".
 
-### ⚙️ 7. Ottimizzazione e tuning
-- Ricerca su griglia e random search per iperparametri
-- Analisi dell’overfitting e regolarizzazione (dropout, L2)
-- Visualizzazione della curva di apprendimento
+#### 📌 5. DEPENDENCY PARSING — Struttura sintattica
+Analizza **le relazioni grammaticali** tra parole, come soggetto-verbo-oggetto.
 
-### 🌍 8. Applicazioni alla rigenerazione
-- Classificazione di zone urbane o ambienti degradati
-- Analisi semantica di testi sulla rigenerazione sociale o ambientale
-- Previsioni su dati ambientali o territoriali (es. qualità dell’aria, uso del suolo)
+#### 📌 6. VOCABULARY — Costruzione del dizionario dei lemmi
+Estrae tutti i lemmi univoci presenti in un testo, e ne calcola la frequenza.
+
+#### 📌 7. STOP WORD FILTERING — Rimozione parole vuote
+Filtra parole comuni che non aggiungono significato semantico (es. "il", "di", "e").
+
+#### 📌 8. VISUALIZZAZIONI — Con displacy
+Visualizza:
+- le **relazioni sintattiche** tra parole (`style="dep"`)
+- le **entità nominate** evidenziate nel testo (`style="ent"`)
+
+---
+
+Tutti gli esercizi sono implementati in Python e pensati per essere eseguiti in **Google Colab** o **Jupyter Notebook**, con esempi chiari e commentati.
+
+📂 Percorso: `notebooks/nlp/`
+
 
 ---
 
