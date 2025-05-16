@@ -45,33 +45,70 @@ Questa sezione contiene esercizi introduttivi sul trattamento automatico del lin
 
 Ogni esercizio è focalizzato su un singolo concetto fondamentale del NLP, utile per costruire pipeline linguistiche, motori di ricerca semantici, e classificatori testuali.
 
-### 📘 Esercizi contenuti:
+### 🧪 Esempio guidato: Analisi NLP di una frase
 
-#### 📌 1. TOKENIZATION — Suddividere il testo in unità minime
-Suddivide un testo in parole, segni di punteggiatura e simboli, detti *token*.
+Per comprendere meglio le operazioni NLP affrontate negli esercizi, utilizziamo una semplice frase in italiano:
 
-#### 📌 2. POS TAGGING — Etichettatura grammaticale
-Assegna a ogni parola la sua **categoria grammaticale** (nome, verbo, aggettivo, ecc.).
+> **"Il gatto salta sul tavolo e beve il latte."**
 
-#### 📌 3. NER — Named Entity Recognition
-Riconosce le **entità nominate** nel testo, come persone, città, date, organizzazioni.
+Vediamo passo per passo cosa accade durante ogni fase dell’elaborazione linguistica automatica:
 
-#### 📌 4. LEMMATIZATION — Forma base della parola
-Riconduce ogni parola alla sua **forma base (lemma)**: ad es. "correvano" → "correre".
+---
 
-#### 📌 5. DEPENDENCY PARSING — Struttura sintattica
-Analizza **le relazioni grammaticali** tra parole, come soggetto-verbo-oggetto.
+📌 **1. Tokenization**  
+Il testo viene suddiviso in unità minime, chiamate *token*:  
+`[Il, gatto, salta, sul, tavolo, e, beve, il, latte, .]`
 
-#### 📌 6. VOCABULARY — Costruzione del dizionario dei lemmi
-Estrae tutti i lemmi univoci presenti in un testo, e ne calcola la frequenza.
+---
 
-#### 📌 7. STOP WORD FILTERING — Rimozione parole vuote
-Filtra parole comuni che non aggiungono significato semantico (es. "il", "di", "e").
+📌 **2. POS Tagging**  
+A ogni token viene assegnata una **categoria grammaticale**:  
+- `gatto` → NOUN (nome)  
+- `salta` → VERB (verbo)  
+- `sul` → ADP (preposizione articolata)  
+- `latte` → NOUN
 
-#### 📌 8. VISUALIZZAZIONI — Con displacy
-Visualizza:
-- le **relazioni sintattiche** tra parole (`style="dep"`)
-- le **entità nominate** evidenziate nel testo (`style="ent"`)
+---
+
+📌 **3. Named Entity Recognition (NER)**  
+In questa frase non sono presenti entità nominate (come persone o luoghi), quindi **nessuna entità viene riconosciuta**.  
+In frasi più complesse, spaCy può identificare:  
+`Luca Bianchi` → `PER` (persona), `Roma` → `LOC` (luogo), ecc.
+
+---
+
+📌 **4. Lemmatization**  
+Ogni parola viene trasformata nella sua forma base (*lemma*):  
+- `salta` → `saltare`  
+- `beve` → `bere`  
+- `gatto` → `gatto`
+
+---
+
+📌 **5. Dependency Parsing**  
+Analizziamo **la struttura grammaticale**:  
+- `gatto` è il soggetto (`nsubj`) del verbo `salta`  
+- `latte` è l’oggetto (`obj`) del verbo `beve`  
+- `tavolo` è il complemento di luogo (`obl`)
+
+---
+
+📌 **6. Vocabulary Construction**  
+Costruiamo un dizionario dei lemmi presenti nel testo (escludendo punteggiatura e parole irrilevanti):  
+`{"gatto": 1, "saltare": 1, "tavolo": 1, "bere": 1, "latte": 1}`
+
+---
+
+📌 **7. Stop Word Filtering**  
+Filtriamo parole poco informative come articoli e congiunzioni:  
+**Rimangono:** `gatto`, `salta`, `tavolo`, `beve`, `latte`
+
+---
+
+📌 **8. Visualizzazioni con displacy**  
+Attraverso grafici interattivi visualizziamo:  
+- **Le relazioni sintattiche**, con archi che collegano soggetto-verbo-oggetto
+- **Le entità nominate** (se presenti), evidenziate nel testo
 
 ---
 
